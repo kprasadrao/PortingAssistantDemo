@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ASPNETExample.Models.CatalogItem>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CatalogItemName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CatalogItemDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CatalogItemPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CatalogItemName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CatalogItemDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CatalogItemPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CatalogItemId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CatalogItemId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CatalogItemId })
+        </td>
+    </tr>
+}
+
+</table>

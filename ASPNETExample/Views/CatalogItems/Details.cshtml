@@ -1,0 +1,43 @@
+﻿@model ASPNETExample.Models.CatalogItem
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CatalogItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CatalogItemName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CatalogItemName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CatalogItemDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CatalogItemDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CatalogItemPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CatalogItemPrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CatalogItemId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
